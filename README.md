@@ -3,7 +3,7 @@ A order management system application consists of the below sub-modules
 
 	1. ServiceRegistry - Spring boot Eureka registry for services discovery
 	2. OrderItemService - Spring boot microservice for managing orderitems
-	3. OrderService - Spring boot microservice for managing orders. Uses Feign Client to call OrderItemService and save orderitems.
+	3. OrderService - Spring boot microservice for managing orders. Uses Feign Client to call OrderItemService to fetch and save orderitems for each order.
 	
 Both OrderItemService and OrderService uses H2 In-memory database for data storage/retrieval and Zalando Problem dependecy to handle REST Exceptions.
 
