@@ -5,7 +5,7 @@ A order management system application consists of the below sub-modules
 	2. OrderItemService - Spring boot microservice for managing orderitems
 	3. OrderService - Spring boot microservice for managing orders. Uses Feign Client to call OrderItemService and save orderitems.
 	
-Both OrderItemService and OrderService uses H2 In-memory database for data storage/retieval and Zalando Problem dependecy to handle REST Exceptions.
+Both OrderItemService and OrderService uses H2 In-memory database for data storage/retrieval and Zalando Problem dependecy to handle REST Exceptions.
 
 Further Improvements that can be added to improve stability of the entire system
 
