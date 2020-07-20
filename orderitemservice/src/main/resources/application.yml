@@ -1,0 +1,69 @@
+# ===================================================================
+# COMMON SPRING BOOT PROPERTIES
+# ===================================================================
+
+# logging configuration
+logging:
+    file: logs/orderitemservice.log
+    pattern:
+        file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
+    level:
+        ROOT: INFO
+        com.tcs.orderitemservice: INFO
+
+# ===================================================================
+
+# spring application configurations
+spring:
+    application:
+        name: OrderItemService
+    # datasource configurations
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:mem:orderitemdb
+        driverClassName: org.h2.Driver
+        username: sa
+        password: password
+    # jpa configurations
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: h2
+        show-sql: false
+        generate-ddl: false
+    # h2 DB configurations
+    h2:
+      console:
+        enabled: true
+      #path: /h2console
+    # for exception handling
+    resources:
+        add-mappings: false
+    mvc:
+        throw-exception-if-no-handler-found: true
+        
+# ===================================================================
+
+# service registry configuration properties
+eureka:
+    instance:
+       prefer-ip-address: true
+    client:
+       register-with-eureka: true
+       fetch-registry: true
+       enabled: true
+       serviceUrl:
+            defaultZone: http://localhost:8761/eureka
+
+# ===================================================================
+
+# application port
+server:
+    port: 8081
+    error:
+      whitelabel:
+        enabled: false
+    servlet:
+        encoding:
+            force: false
+
+# ===================================================================

@@ -1,0 +1,32 @@
+# ===================================================================
+# COMMON SPRING BOOT PROPERTIES
+# ===================================================================
+
+# logging configuration
+logging:
+    file: logs/serviceregistry.log
+    pattern:
+        file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
+    level:
+        ROOT: INFO
+        com.tcs.serviceregistry: INFO
+
+# ===================================================================
+
+# spring application configurations
+spring:
+    application:
+        name: ServiceRegistry
+
+# ===================================================================
+
+# application port
+server:
+    port: 8761
+# eureka properies
+eureka:
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+
+# ===================================================================
