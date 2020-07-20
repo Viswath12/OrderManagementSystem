@@ -16,7 +16,6 @@ public class OrderItem implements Serializable {
   private static final long serialVersionUID = 1L;
   
   private Long id;
-  @NotNull
   private Long orderId;
   @NotBlank
   private String code;
